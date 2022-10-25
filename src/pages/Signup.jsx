@@ -45,9 +45,9 @@ import {GrLinkedin} from 'react-icons/gr'
                   </div>
                   <div className="p-3">
                 <select className="border p-2 rounded-lg" value="role">
-                    <option value="Orange">Orange</option>
-                    <option value="Radish">Radish</option>
-                    <option value="Cherry">Cherry</option>
+                    <option value="Orange">countr</option>
+                    <option value="Radish">sector</option>
+                    <option value="Cherry">district</option>
                 </select>
                       
                   </div>
