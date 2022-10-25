@@ -1,9 +1,9 @@
 import React from 'react';
 import  {useState} from "react";
 import Validation from './validationSignup';
-// import {FcGoogle} from 'react-icons/fc'
-// import {SiFacebook} from 'react-icons/si'
-// import {GrLinkedin} from 'react-icons/gr'
+import {FcGoogle} from 'react-icons/fc'
+import {SiFacebook} from 'react-icons/si'
+import {GrLinkedin} from 'react-icons/gr'
  function SignUp(){
      const[values, setValues] = useState({
          email:"",
@@ -55,9 +55,9 @@ import Validation from './validationSignup';
                   <div className="p-3">
                       <p className="text-center">Or sign in using</p>
                       <div className="flex space-x-12 py-4 justify-center">
-                          {/* <p><FcGoogle /></p>
+                          <p><FcGoogle /></p>
                           <p><SiFacebook /></p>
-                          <p><GrLinkedin /></p> */}
+                          <p><GrLinkedin /></p>
 
                       </div>
                       <p className="text-center">Already have an account? <strong className="text-blue-800">Login</strong></p>

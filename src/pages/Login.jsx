@@ -64,7 +64,7 @@ export default function Login(){
                   </div>
                   <div className="flex flex-col py-3">
                       <input className="border p-3 rounded-lg outline-none " type="password" placeholder="Enter your password " name="password" value={values.password} onChange={handleChange}/>
-                      {errors.password && <p className="error">{errors.password}</p>}
+                      {errors.password && <p className="error"> {errors.password}</p>}
                   </div>
                   <div className='flex flex-row m-2'>
                         <input type="checkbox" className="w-7 h-7"  />
