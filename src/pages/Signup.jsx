@@ -1,11 +1,10 @@
 
-
 import React from 'react';
 import Logo from '../image/logo.png';
 import Business from '../image/business.svg';
 import  { useState } from "react";
 import Validation from './validationSignup';
-import {FcGoogle} from 'react-icons/fc'
+import {AiFillGoogleCircle} from 'react-icons/ai'
 import {SiFacebook} from 'react-icons/si'
 import {GrLinkedin} from 'react-icons/gr'
 
@@ -72,7 +71,7 @@ export default function Login(){
                       {errors.password && <p className="error"> {errors.password}</p>}
                   </div>
                   <div className="p-3">
-                 <select className="border p-2 rounded-lg" value="role">
+                 <select className="border p-2 rounded-lg otline-none">
                      <option value="Orange">country</option>
                      <option value="Radish">sector</option>
                      <option value="Cherry">district</option>
@@ -81,10 +80,17 @@ export default function Login(){
                   </div>
                   <button className="border w-full my-6 py-2 bg-blue-800 rounded-lg text-white font-bold  text-[18px]  hover:bg-blue-700 relative" onClick={handleFormSubmit}>Sign up</button>
                   <div className="flex space-x-12 py-4 justify-center ">
-                           <p><FcGoogle /></p>
-                          <p><SiFacebook /></p>
-                           <p><GrLinkedin /></p>
+                  <div className="bg-[#1a1a5a] w-12 h-12 rounded-[50%] m-[0.5rem] ">
+            <AiFillGoogleCircle className="mt-3 ml-3 w-[50%] h-6 fill-white" />
+          </div>
 
+          <div className="bg-[#1a1a5a] w-12 h-12 rounded-[50%] m-[0.5rem] ">
+            <SiFacebook className="mt-3 ml-3 w-[50%] h-6 fill-white" />
+          </div>
+          <div className="bg-[#1a1a5a] w-12 h-12 rounded-[50%] m-[0.5rem] ">
+            <GrLinkedin className="mt-3 ml-3 w-[50%] h-6 fill-white" />
+          </div>
+                        
                     </div>
                   <div className="p-3">
                       <p className="text-center"> Already have an account? <strong><a className='text-gray-800  hover:text-blue-900' href='/Login'>Login</a></strong></p>
@@ -97,4 +103,3 @@ export default function Login(){
         </div>
     )
 }
-
