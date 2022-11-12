@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> eb629fa21f13c3bca7c5f733b5c9d6f81db645c0
 import React from 'react';
 import Logo from '../image/logo.png';
 import Business from '../image/business.svg';
@@ -23,7 +27,11 @@ export default function Login(){
       
         const handleChange = (event) => {
             
+<<<<<<< HEAD
             setVgit alues({
+=======
+            setValues({
+>>>>>>> eb629fa21f13c3bca7c5f733b5c9d6f81db645c0
                 values,
                 [event.target.name]:event.target.value,
             })
@@ -71,7 +79,11 @@ export default function Login(){
                       {errors.password && <p className="error"> {errors.password}</p>}
                   </div>
                   <div className="p-3">
+<<<<<<< HEAD
                  <select className="border p-2 rounded-lg otline-none">
+=======
+                 <select className="border p-2 rounded-lg" value="role">
+>>>>>>> eb629fa21f13c3bca7c5f733b5c9d6f81db645c0
                      <option value="Orange">country</option>
                      <option value="Radish">sector</option>
                      <option value="Cherry">district</option>
@@ -95,4 +107,9 @@ export default function Login(){
     
         </div>
     )
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> eb629fa21f13c3bca7c5f733b5c9d6f81db645c0
