@@ -1,11 +1,10 @@
 
-
 import React from 'react';
 import Logo from '../image/logo.png';
 import Business from '../image/business.svg';
 import  { useState } from "react";
 import Validation from './validationSignup';
-import {FcGoogle} from 'react-icons/fc'
+import {AiFillGoogleCircle} from 'react-icons/ai'
 import {SiFacebook} from 'react-icons/si'
 import {GrLinkedin} from 'react-icons/gr'
 
@@ -72,7 +71,7 @@ export default function Login(){
                       {errors.password && <p className="error"> {errors.password}</p>}
                   </div>
                   <div className="p-3">
-                 <select className="border p-2 rounded-lg" value="role">
+                 <select className="border p-2 rounded-lg otline-none">
                      <option value="Orange">country</option>
                      <option value="Radish">sector</option>
                      <option value="Cherry">district</option>
@@ -81,9 +80,9 @@ export default function Login(){
                   </div>
                   <button className="border w-full my-6 py-2 bg-blue-800 rounded-lg text-white font-bold  text-[18px]  hover:bg-blue-700 relative" onClick={handleFormSubmit}>Sign up</button>
                   <div className="flex space-x-12 py-4 justify-center ">
-                        <p><FcGoogle  className='w-4 h-4' /></p>
-                          <p><SiFacebook   className='fill-blue-500 w-4 h-4'/></p>
-                           <p><GrLinkedin  className='fill-blue-500 w-4 h-4' /></p>
+                           <p><FcGoogle /></p>
+                          <p><SiFacebook /></p>
+                           <p><GrLinkedin /></p>
 
                     </div>
                   <div className="p-3 flex ml-[8rem]">
@@ -98,4 +97,3 @@ export default function Login(){
         </div>
     )
 }
-
