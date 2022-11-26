@@ -66,15 +66,17 @@ export default function Login(){
                       <input className="border p-3 rounded-lg outline-none " type="password" placeholder="Enter your password " name="password" value={values.password} onChange={handleChange}/>
                       {errors.password && <p className="error"> {errors.password}</p>}
                   </div>
-                  <div className='flex flex-row m-2'>
-                        <input type="checkbox" className="w-7 h-7"  />
+                  <div className='flex flex-row m-4 w-[32rem] h-[2rem]'>
+                        <input type="checkbox" className="w-6 h-6"  />
                         <label htmlFor="rememberMe" className='ml-4 font-semibold text-[16.5px]' >Remember me</label>
-                        <a className='text-gray-800 font-extrabold ml-[220px] hover:text-blue-900' href='/'>Forgot password</a>
+                        <a className='text-gray-800 font-bold ml-[220px] hover:text-blue-900' href='/'>Forgot password</a>
                   </div>
-                  <button className="border w-full my-6 py-2 bg-blue-800 rounded-lg text-white font-bold  text-[18px]  hover:bg-blue-700 relative" onClick={handleFormSubmit}>Login</button>
-                  <div className="p-3">
-                      <p className="text-center"> Don't have an account? <strong className="text-blue-800">Sign up</strong></p>
+                  <button className="border w-full my-6 py-2 bg-blue-800 rounded-lg text-white font-bold  text-[18px]  hover:bg-blue-700 relative transition duration-700 ease-in-out   " onClick={handleFormSubmit}>Login</button>
+                  <div className="p-3 flex ml-[8rem]">
+                      <p className="text-center"> Already have an account? </p>
+                      <strong><a className='text-blue-700  hover:text-blue-900 ml-2' href='/signup'>Signup</a></strong>
                   </div>
+
               </form>
 
           </div>

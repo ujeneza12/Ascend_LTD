@@ -81,13 +81,14 @@ export default function Login(){
                   </div>
                   <button className="border w-full my-6 py-2 bg-blue-800 rounded-lg text-white font-bold  text-[18px]  hover:bg-blue-700 relative" onClick={handleFormSubmit}>Sign up</button>
                   <div className="flex space-x-12 py-4 justify-center ">
-                           <p><FcGoogle /></p>
-                          <p><SiFacebook /></p>
-                           <p><GrLinkedin /></p>
+                        <p><FcGoogle  className='w-4 h-4' /></p>
+                          <p><SiFacebook   className='fill-blue-500 w-4 h-4'/></p>
+                           <p><GrLinkedin  className='fill-blue-500 w-4 h-4' /></p>
 
                     </div>
-                  <div className="p-3">
-                      <p className="text-center"> Already have an account? <strong><a className='text-gray-800  hover:text-blue-900' href='/Login'>Login</a></strong></p>
+                  <div className="p-3 flex ml-[8rem]">
+                      <p className="text-center"> Already have an account? </p>
+                      <strong><a className='text-blue-700  hover:text-blue-900 ml-2' href='/Login'>Login</a></strong>
                   </div>
               </form>
 
