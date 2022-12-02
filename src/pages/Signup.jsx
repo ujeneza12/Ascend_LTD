@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Logo from '../image/logo.png';
 import Business from '../image/business.svg';
@@ -80,7 +79,7 @@ export default function Login(){
                   </div>
                   <button className="border w-full my-6 py-2 bg-blue-800 rounded-lg text-white font-bold  text-[18px]  hover:bg-blue-700 relative" onClick={handleFormSubmit}>Sign up</button>
                   <div className="flex space-x-12 py-4 justify-center ">
-                           <p><FcGoogle /></p>
+                           <p><AiFillGoogleCircle /></p>
                           <p><SiFacebook /></p>
                            <p><GrLinkedin /></p>
 

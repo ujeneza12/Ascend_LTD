@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Logo from "../image/logo.png";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsMessenger } from "react-icons/bs";
@@ -9,24 +9,33 @@ import Treding  from "../image/trending.svg";
 import Rated  from "../image/rated.svg";
 import Subscribe  from "../image/subscribe.svg";
 import Pics from "../file_components/Pic";
-
+import Search from "./Search.jsx";
 export default function Homepage() {
+
+  const searchRef = useRef(null);
+  const navRef = useRef(null);
+  const container = useRef(null);
+
+  const search = () => {
+    container.current.parentNode.parentNode.classList.add("overflow-hidden");
+    searchRef.current.classList.remove("hidden");
+    navRef.current.classList.remove("z-10");
+  }
+
   return (
-    <>
-      <div className="bg-white sticky top-[-1rem] flex flex-row ml-[3rem] z-10">
+    <div ref={container}>
+      <div className="bg-white sticky top-[-1rem] flex flex-row ml-[3rem] z-10" ref={navRef}>
         <div className="flex flex-row w-[9rem] h-[5rem]  justify-center my-6  ">
           <img src={Logo} className="w-[5.7rem] h-16  my-1 " alt="logo" />
           <h1 className="mt-4  font-bold text-[21px] ">Ascend</h1>
         </div>
-        <form className="w-1/2 h-16  mt-8 ml-[7.4rem] flex flex-row items-center ">
+        <form className="w-1/2 h-16  mt-8 ml-[7.4rem] flex flex-row  items-center ">
           <div className="border-[1px] border-[#616191] flex items-center justify-around w-full rounded-[10px]">
-            <input
-              className="p-4 rounded-lg w-[88%] h-full indent-1  outline-none text-[14px] font-sans  placeholder-gray-500  "
-              type="search"
-              placeholder="Search the product you want  "
-              name="email"
-            />
-            <AiOutlineSearch className="w-8 h-8 fill-[#020255]  rotate-90" />
+            <div          
+              className="p-4 rounded-lg w-[88%] h-full indent-1  outline-none text-[14px] font-sans  text-gray-500 cursor-text"
+              onClick={search}
+            > Search the product you want</div>
+            <AiOutlineSearch className="w-8 h-8 fill-[#020255]  rotate-90 cursor-pointer" />
           </div>
         </form>
 
@@ -45,9 +54,9 @@ export default function Homepage() {
       </div>
 
       <div className="flex justify-end">
-        <div className="bg-[#1a1a5a] w-[14.5%] h-[15rem]  left-[5rem] top-[15rem] rounded-[20px] flex flex-col fixed">
+        <div className="bg-[#1a1a5a] w-[14.5%] h-[15rem]  left-[4rem] top-[15rem] rounded-[20px] flex flex-col fixed">
           <div className="flex flex-row  ml-4 pt-[4rem] transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-103 duration-30">
-            <Recent className="w-[1.4rem] h-[1.4rem] fill-white pointer  " />
+            <Recent className="w-[1.4rem] h-[1.4rem] fill-white pointer " />
             <p className="text-white text-[14px] font-sans  ml-1">Recent</p>
           </div>
 
@@ -68,7 +77,7 @@ export default function Homepage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-4  w-[66%] mx-[5rem] p-2 ">
+        <div className="grid grid-cols-4 gap-4  w-[66%] mx-[6rem] p-2">
           {Pics.data.picture.map((pic) => (
             <div key={pic.id} className=" w-full  h-[19rem] m-1  bg-slate-100 rounded-[13px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-30">
               <img src={pic.src} alt="pic" className="h-[63%] rounded-[13px]" />
@@ -86,6 +95,9 @@ export default function Homepage() {
 
         </div>
       </div>
-    </>
+      <div className="hidden w-[100vw] h-[100vh] absolute top-0 bottom-0" ref={searchRef}>
+        <Search />
+      </div>
+    </div>
   );
 }
