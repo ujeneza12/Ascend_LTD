@@ -10,6 +10,7 @@ import Rated  from "../image/rated.svg";
 import Subscribe  from "../image/subscribe.svg";
 import Pics from "../file_components/Pic";
 import Search from "./Search.jsx";
+import { Link } from "react-router-dom";
 export default function Homepage() {
 
   const searchRef = useRef(null);
@@ -19,7 +20,10 @@ export default function Homepage() {
   const search = () => {
     container.current.parentNode.parentNode.classList.add("overflow-hidden");
     searchRef.current.classList.remove("hidden");
+    searchRef.current.classList.remove("overflow-hidden");
+
     navRef.current.classList.remove("z-10");
+
   }
 
   return (
@@ -34,7 +38,7 @@ export default function Homepage() {
             <div          
               className="p-4 rounded-lg w-[88%] h-full indent-1  outline-none text-[14px] font-sans  text-gray-500 cursor-text"
               onClick={search}
-            > Search the product you want</div>
+            > Search the product you </div>
             <AiOutlineSearch className="w-8 h-8 fill-[#020255]  rotate-90 cursor-pointer" />
           </div>
         </form>
@@ -64,6 +68,7 @@ export default function Homepage() {
             <img src={Treding} className="w-[1.5rem] h-[1.4rem] items-center  " alt="tred" />
             <p className="text-white text-[14px] font-sans  ml-1">Trending</p>
           </div>
+          
           <div className="flex flex-row  ml-4 pt-[1rem] items-center transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-103 duration-30">
             <img src={Rated} className="w-[1.5rem] h-[1.4rem]" alt="rated" />
             <p className="text-white text-[14px] font-sans  ml-1">
@@ -80,14 +85,18 @@ export default function Homepage() {
         <div className="grid grid-cols-4 gap-4  w-[66%] mx-[6rem] p-2">
           {Pics.data.picture.map((pic) => (
             <div key={pic.id} className=" w-full  h-[19rem] m-1  bg-slate-100 rounded-[13px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-30">
-              <img src={pic.src} alt="pic" className="h-[63%] rounded-[13px]" />
+            
+            <Link to={`/Product?id=${pic.id}&picName=${pic.name}&picSrc=${pic.src}`} >
+              <img src={pic.src} alt="pic" className="h-[63%] rounded-[13px] " />
+            </Link>
+
               <h2 className="font-bold mt-1 text-[14px] text-slate-800">{pic.name}</h2>
               <p className="text-[11px] text-slate-600">the leap into good electronic  typesetting....</p>
              <div className="flex flex-row items-center">
-              <div className="w-7 h-7  rounded-[50%] mt-3 overflow-hidden ml-2 ">
-                <img src={pic.wholesaler} alt='wholesaler' className="w-full " />
-                
-              </div>
+                <div className="w-7 h-7  rounded-[50%] mt-3 overflow-hidden ml-2 ">
+                  <img src={pic.wholesaler} alt='wholesaler' className="w-full " />  
+                </div>
+            
               <p className="text-[11px] font-bold text-slate-700 ml-2 mt-3">Patrict Star</p>
              </div>
             </div>

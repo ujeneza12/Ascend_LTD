@@ -79,14 +79,15 @@ export default function Login(){
                   </div>
                   <button className="border w-full my-6 py-2 bg-blue-800 rounded-lg text-white font-bold  text-[18px]  hover:bg-blue-700 relative" onClick={handleFormSubmit}>Sign up</button>
                   <div className="flex space-x-12 py-4 justify-center ">
-                  <div className="bg-[#1a1a5a] w-12 h-12 rounded-[50%] m-[0.5rem] ">
-            <AiFillGoogleCircle className="mt-3 ml-3 w-[50%] h-6 fill-white" />
-          </div>
 
-          <div className="bg-[#1a1a5a] w-12 h-12 rounded-[50%] m-[0.5rem] ">
+                  <div className="bg-[#1a1a5a] w-12 h-12 rounded-[50%] m-[0.5rem] cursor-pointer ">
+                      <AiFillGoogleCircle className="mt-3 ml-3 w-[50%] h-6 fill-white " />
+                   </div> 
+
+          <div className="bg-[#1a1a5a] w-12 h-12 rounded-[50%] m-[0.5rem] cursor-pointer">
             <SiFacebook className="mt-3 ml-3 w-[50%] h-6 fill-white" />
           </div>
-          <div className="bg-[#1a1a5a] w-12 h-12 rounded-[50%] m-[0.5rem] ">
+          <div className="bg-[#1a1a5a] w-12 h-12 rounded-[50%] m-[0.5rem] cursor-pointer ">
             <GrLinkedin className="mt-3 ml-3 w-[50%] h-6 fill-white" />
           </div>
                         

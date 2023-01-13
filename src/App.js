@@ -6,6 +6,7 @@ import Homepage from '../src/pages/Homepage';
 import Signup from '../src/pages/Signup';
 import Search from '../src/pages/Search';
 import '../src/index.css';
+import Product from './pages/Product';
 
 
 export default function App() {
@@ -17,6 +18,8 @@ export default function App() {
       <Route path="/" element={<Homepage />} />
       <Route path="/Signup" element={<Signup />} />
       <Route path="/Search" element={<Search />} />
+      <Route path="/Product" element={<Product />} />
+
     </Routes>
     
     </BrowserRouter>
