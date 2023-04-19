@@ -1,32 +1,32 @@
-import React from 'react'
-import Logo from '../image/logo.png';
+import React, {useRef} from 'react'
 import { SlClose } from 'react-icons/sl'
 
 
 function Search() {
+
+  const searchRemover = useRef(null);
+
+  const removeSearch = () => {
+    searchRemover.current.parentNode.classList.add("hidden");
+    searchRemover.current.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove("overflow-hidden");
+    searchRemover.current.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add("overflow-x-hidden");
+
+    searchRemover.current.parentNode.parentNode.parentNode.childNodes[0].classList.add("z-10");
+  }
+
   return (
-    <div className=" relative h-screen  flex  bg-[#2E2D2D] opacity-70">
+    <div className=" w-[100%] h-[100%] top-0 bottom-0 flex  bg-[#1d1d1d] opacity-90 z-30">
 
-
-      <div className='flex flex-row w-[9rem] h-[5rem]  justify-center my-2 mx-2'>
-        <img src={Logo} className="w-[3.3rem] h-9  my-1 " alt='logo' />
-        <h1 className='mt-2  text-white font-bold text-[14px]'>Ascend</h1>
-      </div>
-
-      <div className=" absolute h-4 right-[3%] top-[7%]">
-        <p className="bg-white rounded-full text-[29px] outline-none"> <SlClose /></p>
-      </div>
-
-      <div class="absolute bottom-0 left-[12%] h-[35rem] rounded-tl-lg w-[8%] bg-black 900 opacity-90">
-
+      <div className=" absolute h-4 right-[3%] top-[7%]" onClick={removeSearch} ref={searchRemover}>
+        <p className="bg-white rounded-full text-[29px] outline-none cursor-pointer"> <SlClose /></p>
       </div>
 
 
-      <div class=" absolute bottom-12 bg-white h-[84%] w-[58%] left-[19%] rounded">
+      <div class=" absolute bottom-12 bg-white h-[84%] w-[58%] left-[19%] rounded opacity-100">
         <p className="text-center py-12 font-bold">Search your product here</p>
 
         <div className="flex flex-col py-3 place-items-center m-4">
-          <input className="border-2 border-blue-900 p-3 rounded-lg w-[70%] outline-none border" type="text" name="product-name" placeholder="product name"></input>
+          <input className="border-2 border-blue-900 p-3 rounded-lg w-[70%] outline-none"  type="text" name="product-name" placeholder="product name"></input>
 
         </div>
         <div className="flex flex-col py-3 place-items-center m-4">
