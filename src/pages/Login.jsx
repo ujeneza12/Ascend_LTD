@@ -1,13 +1,14 @@
 import React from 'react';
 import Logo from '../image/logo.png';
 import Business from '../image/business.svg';
-import  { useState } from "react";
+import  { useState ,useEffect} from "react";
+import {useNavigate } from 'react-router-dom';
 import Validation from './validationSignup';
 
 
 export default function Login(){
 
-    
+         const navigate  = useNavigate()
         const[values, setValues] = useState({
             email:"",
             password:"",
@@ -15,14 +16,17 @@ export default function Login(){
 
    
         })
+
+        useEffect(()=>{
+            if(localStorage.getItem('ascend-app-user')){
+                navigate('/Home')
+            }
+        },[])
+
         const [errors, setErrors] = useState({})
       
         const handleChange = (event) => {
-            
-            setValues({
-                values,
-                [event.target.name]:event.target.value,
-            })
+            setValues({values,[event.target.name]:event.target.value})
            }
        
         const handleFormSubmit = (event) =>{

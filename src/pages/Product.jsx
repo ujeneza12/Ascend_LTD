@@ -120,6 +120,13 @@ import Pics from "../file_components/Pic2";
                                     <p className="font-bold text-[14px] text-gray-600 mt-2">Retailer :$23</p>
                                     <button className="bg-[#1a1a5a] text-[14px] w-[13rem] h-[1.6rem] rounded text-white justify-center m-3 ml-4">Add to cart</button>
                                     
+                                    <div className='flex flex-row gap-3'>
+                                        <p className='text-gray-500 font-bold'>View more</p>
+                                        <AiOutlineSwapRight className="mt-1 fill-gray-500 stroke-[3rem] h-4 bg-blue-300"/>
+
+
+                                    </div>
+
 
                                 </div>     
 

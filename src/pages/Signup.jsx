@@ -1,16 +1,17 @@
 import React from 'react';
 import Logo from '../image/logo.png';
 import Business from '../image/business.svg';
-import  { useState } from "react";
+import  { useState ,useEffect} from "react";
+import {useNavigate } from 'react-router-dom';
 import Validation from './validationSignup';
 import {AiFillGoogleCircle} from 'react-icons/ai'
-import {SiFacebook} from 'react-icons/si'
-import {GrLinkedin} from 'react-icons/gr'
+import {SiFacebook} from 'react-icons/si';
+import {GrLinkedin} from 'react-icons/gr';
 
 
 export default function Login(){
 
-    
+        const navigate  = useNavigate()
         const[values, setValues] = useState({
             email:"",
             password:"",
@@ -18,19 +19,28 @@ export default function Login(){
 
    
         })
+
+
+        
+        useEffect(()=>{
+            if(localStorage.getItem('ascend-app-user')){
+                navigate('/Home')
+            }
+        },[])
+
+
         const [errors, setErrors] = useState({})
       
         const handleChange = (event) => {
             
-            setValues({
-                values,
-                [event.target.name]:event.target.value,
-            })
+            setValues({values,[event.target.name]:event.target.value})
            }
        
         const handleFormSubmit = (event) =>{
             event.preventDefault();
             setErrors(Validation(values))
+
+
            
         }
     return(
@@ -48,7 +58,7 @@ export default function Login(){
                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. eos Officia  obcaecati quod culpa illum sit </p> 
                         <p className="text-center ">debitis iure, obcaecati quod culpa illum sit tempore ipsa.</p>  
                        <div className='flex flex-row justify-center items-center mt-5'>
-                       <input type="radio" value="slide1" name="slide" /> 
+                       <input type="radio" value="slide1" name="slide" />  
                        <input type="radio" value="slide2" name="slide" /> 
                        <input type="radio" value="slide3" name="slide" /> 
                        <input type="radio" value="slide3" name="slide" /> 

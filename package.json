@@ -14,6 +14,10 @@
     "react-icon": "^1.0.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.2",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.3",
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
     "react-scripts": "5.0.1",
     "url-parse": "^1.5.10",
     "web-vitals": "^2.1.4"
